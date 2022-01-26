@@ -18,7 +18,7 @@ public class Bullet : MonoBehaviour
             while (elapsedTime <= moveTime)
             {
                 elapsedTime += Time.deltaTime;
-                mainTransform.position += mainTransform.up * moveSpeed * Time.deltaTime;
+                mainTransform.position += moveSpeed * Time.deltaTime * mainTransform.up;
                 elapsedTime++;
                 yield return null;
             }
