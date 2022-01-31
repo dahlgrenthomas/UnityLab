@@ -109,5 +109,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mainTransform: {fileID: 4035868367212882106}
-  moveTime: 300
+  moveTime: 5
   moveSpeed: 30

@@ -19,7 +19,6 @@ public class Bullet : MonoBehaviour
             {
                 elapsedTime += Time.deltaTime;
                 mainTransform.position += moveSpeed * Time.deltaTime * mainTransform.up;
-                elapsedTime++;
                 yield return null;
             }
             Destroy(gameObject);
