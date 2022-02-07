@@ -10,6 +10,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] public Sprite spriteA;
     [SerializeField] public Sprite spriteB;
     bool isgrounded;
+    bool flap = true;
 
     // Start is called before the first frame update
     void Start()
@@ -24,36 +25,42 @@ public class PlayerController : MonoBehaviour
             mainRigidbody.AddForce(new Vector2(-moveSpeed * Time.deltaTime, 0));
             mainSpriteRenderer.flipX = false;
         }
-        else if (Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.D))
+        if (Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.D))
         {
             mainRigidbody.AddForce(new Vector2(moveSpeed * Time.deltaTime, 0));
             mainSpriteRenderer.flipX = true;
         }
-        else if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.Space))
         {
+            isgrounded = false;
             mainRigidbody.AddForce(new Vector2(0, 200));
-            GetComponent<SpriteRenderer>().sprite = spriteA;
-
+            Flap();
         }
         if (isgrounded == true)
         {
-            GetComponent<SpriteRenderer>().sprite = spriteB;
+            GetComponent<SpriteRenderer>().sprite = spriteA;
         }
     }
-    void OnCollisionEnter(Collision theCollision)
+    public void Flap()
     {
-        if (theCollision.gameObject.name == "floor")
+        if(flap == true)
+        {
+            GetComponent<SpriteRenderer>().sprite = spriteB;
+            flap = false;
+        }
+        else
+        {
+            GetComponent<SpriteRenderer>().sprite = spriteA;
+            flap = true;
+        }
+    }
+    void OnCollisionEnter2D(Collision2D col)
+    {
+        if (col.gameObject.name == "floor")
         {
             isgrounded = true;
+            flap = true;
         }
     }
 
-    //consider when character is jumping .. it will exit collision.
-    void OnCollisionExit(Collision theCollision)
-    {
-        if (theCollision.gameObject.name == "floor")
-        {
-            isgrounded = false;
-        }
-    }
 }
