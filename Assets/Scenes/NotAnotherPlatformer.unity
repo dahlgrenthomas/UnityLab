@@ -201,7 +201,7 @@ GameObject:
   - component: {fileID: 112039360}
   - component: {fileID: 112039359}
   m_Layer: 0
-  m_Name: default_brick
+  m_Name: floor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

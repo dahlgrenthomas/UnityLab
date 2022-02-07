@@ -35,6 +35,10 @@ public class PlayerController : MonoBehaviour
             GetComponent<SpriteRenderer>().sprite = spriteA;
 
         }
+        if (isgrounded == true)
+        {
+            GetComponent<SpriteRenderer>().sprite = spriteB;
+        }
     }
     void OnCollisionEnter(Collision theCollision)
     {
