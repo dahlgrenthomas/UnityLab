@@ -17,6 +17,8 @@ public class ObjectSpawner : MonoBehaviour
         if (Input.GetKey(KeyCode.Space))
         {
             SpawnObject newObject = Instantiate(objectPrefab);
+            newObject.transform.position = spawnLocation.position;
+            newObject.transform.rotation = Random.rotation;
         }
 
     }
