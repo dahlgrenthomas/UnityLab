@@ -8,11 +8,6 @@ public class ObjectSpawner : MonoBehaviour
     [SerializeField] private SpawnObject objectPrefab;
     [SerializeField] private TMP_Text objectCountText;
     private int objectCount = 0;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
     // Update is called once per frame
     void Update()
