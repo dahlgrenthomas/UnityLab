@@ -38,19 +38,19 @@ public class PlayerController : MonoBehaviour
         }
         if (isgrounded == true)
         {
-            GetComponent<SpriteRenderer>().sprite = spriteA;
+            mainSpriteRenderer.sprite = spriteA;
         }
     }
     public void Flap()
     {
         if(flap == true)
         {
-            GetComponent<SpriteRenderer>().sprite = spriteB;
+            mainSpriteRenderer.sprite = spriteB;
             flap = false;
         }
         else
         {
-            GetComponent<SpriteRenderer>().sprite = spriteA;
+            mainSpriteRenderer.sprite = spriteA;
             flap = true;
         }
     }
