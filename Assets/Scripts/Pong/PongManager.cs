@@ -24,14 +24,15 @@ public class PongManager : MonoBehaviour
     void HandleP2Score()
     {
         p2Score += 1;
-        if(p2Score == 1)
+        player2Score.text = p2Score.ToString();
+        if (p2Score == 1)
         {
             winText.text = "Player 2 Wins!";
             StartCoroutine(EndGame());
         }
         else
         {
-            player2Score.text = p2Score.ToString();
+            
             ball.Restart();
         }
 
@@ -39,6 +40,7 @@ public class PongManager : MonoBehaviour
     void HandleP1Score()
     {
         p1Score += 1;
+        player1Score.text = p1Score.ToString();
         if (p1Score == 1)
         {
             winText.text = "Player 1 Wins!";
@@ -46,7 +48,6 @@ public class PongManager : MonoBehaviour
         }
         else
         {
-            player1Score.text = p1Score.ToString();
             ball.Restart();
         }
 
