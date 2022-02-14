@@ -16,12 +16,12 @@ public class Paddle : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKey(upKey) && transform.position.y <= 5.98)
+        if (Input.GetKey(upKey) && transform.position.y <= 6)
         {
             transform.position += new Vector3(0, moveSpeed * Time.deltaTime, 0);
 
         }
-        if (Input.GetKey(downKey) && transform.position.y >= -5.98)
+        if (Input.GetKey(downKey) && transform.position.y >= -6)
         {
             transform.position += new Vector3(0, -moveSpeed * Time.deltaTime, 0);
 
