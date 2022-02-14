@@ -10,6 +10,8 @@ public class MainMenuManager : MonoBehaviour
     [SerializeField] private Button creditsClose;
     [SerializeField] private GameObject creditsUI;
     [SerializeField] private Button platformerOpen;
+    [SerializeField] private Button SpawnButtonOpen;
+    [SerializeField] private Button PongButton;
 
     // Start is called before the first frame update
     void Start()
@@ -18,6 +20,8 @@ public class MainMenuManager : MonoBehaviour
         creditsClose.onClick.AddListener(() => { creditsUI.SetActive(false); });
         startButton.onClick.AddListener(() => LoadingScreen.LoadScene("GunScene"));
         platformerOpen.onClick.AddListener(() => LoadingScreen.LoadScene("NotAnotherPlatformer"));
+        SpawnButtonOpen.onClick.AddListener(() => LoadingScreen.LoadScene("3DSpawn"));
+        PongButton.onClick.AddListener(() => LoadingScreen.LoadScene("Pong"));
 
     }
 
