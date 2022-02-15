@@ -25,8 +25,6 @@ public class PongBall : MonoBehaviour
     }
     public void StopBall()
     {
-        Vector2 newVelocity = new Vector2(0, 0);
-        mainRigidbody.velocity = newVelocity.normalized * startSpeed;
-
+        mainRigidbody.velocity = new Vector2(0, 0);
     }
 }
