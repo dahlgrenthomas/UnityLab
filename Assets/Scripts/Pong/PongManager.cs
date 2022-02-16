@@ -14,7 +14,7 @@ public class PongManager : MonoBehaviour
     [SerializeField] private TMP_Text winText;
     private int p1Score = 0;
     private int p2Score = 0;
-    private int win = 50;
+    private int win = 5;
 
     private void Awake()
     {
