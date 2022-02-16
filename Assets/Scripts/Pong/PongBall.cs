@@ -31,7 +31,7 @@ public class PongBall : MonoBehaviour
             int randomOne = Random.Range(0, 2) * 2 - 1;
             int randomOne2 = Random.Range(0, 2) * 2 - 1;
 
-            Vector2 newVelocity = new Vector2(Random.Range(5f, 10f)*randomOne, Random.Range(1f, 7f)*randomOne2);
+            Vector2 newVelocity = new Vector2(Random.Range(5f, 10f)*randomOne, Random.Range(1.5f, 7f)*randomOne2);
             mainRigidbody.velocity = newVelocity.normalized * startSpeed;
         }
         
