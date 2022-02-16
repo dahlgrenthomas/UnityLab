@@ -45,20 +45,16 @@ public class PongBall : MonoBehaviour
         AudioSource[] audios = GetComponents<AudioSource>();
         if (col.gameObject.CompareTag("Paddle"))
         {
-            Debug.Log("Hit paddle");
-
             audioPaddleHit.volume = Mathf.InverseLerp(0, 10, col.relativeVelocity.magnitude);
             audioPaddleHit.Play();
         }
         if (col.gameObject.CompareTag("Goal"))
         {
-
             audioGoalHit.volume = Mathf.InverseLerp(0, 10, col.relativeVelocity.magnitude);
             audioGoalHit.Play();
         }
         if (col.gameObject.CompareTag("Wall"))
         {
-
             audioWallHit.volume = Mathf.InverseLerp(0, 10, col.relativeVelocity.magnitude);
             audioWallHit.Play();
         }
