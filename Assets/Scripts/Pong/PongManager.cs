@@ -14,7 +14,7 @@ public class PongManager : MonoBehaviour
     [SerializeField] private TMP_Text winText;
     private int p1Score = 0;
     private int p2Score = 0;
-    private int win = 5;
+    private int win = 7;
 
     private void Awake()
     {
@@ -26,7 +26,12 @@ public class PongManager : MonoBehaviour
     {
         p2Score += 1;
         player2Score.text = p2Score.ToString();
-        if (p2Score == win)
+        if (p2Score == win && p1Score == 1)
+        {
+            winText.text = "Player 1 Got Brazil'd!";
+            StartCoroutine(EndGame());
+        }
+        else if (p2Score == win)
         {
             winText.text = "Player 2 Wins!";
             StartCoroutine(EndGame());
@@ -41,11 +46,17 @@ public class PongManager : MonoBehaviour
     {
         p1Score += 1;
         player1Score.text = p1Score.ToString();
-        if (p1Score == win)
+        if (p1Score == win && p2Score == 1)
+        {
+            winText.text = "Player 2 Got Brazil'd!";
+            StartCoroutine(EndGame());
+        }
+        else if (p1Score == win)
         {
             winText.text = "Player 1 Wins!";
             StartCoroutine(EndGame());
         }
+
         else
         {
             ball.Restart();
