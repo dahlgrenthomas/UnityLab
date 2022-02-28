@@ -44,6 +44,7 @@ public class FPSPlayer : MonoBehaviour
             Destroy(hit.gameObject);
             if (Health > 0)
             {
+                Debug.Log("Health");
                 Health--;
             }
         }
@@ -59,7 +60,7 @@ public class FPSPlayer : MonoBehaviour
         set
         {
             health = value;
-            //fpsUI.ShowHealthFraction((float)Health / (float)maxHealth);
+            fpsUI.ShowHealthFraction((float)Health / (float)maxHealth);
             if (health <= 0)
             {
                 LoadingScreen.LoadScene("MainMenu");
@@ -70,7 +71,7 @@ public class FPSPlayer : MonoBehaviour
     public void HandleEnemyDefeat()
     {
         enemyDefeatCount++;
-        //fpsUI.ShowEnemyDefeatCount(enemyDefeatCount);
+        fpsUI.ShowEnemyDefeatCount(enemyDefeatCount);
     }
     public bool ShouldSpawn(Vector3 pos)
     {
