@@ -12,6 +12,7 @@ public class MainMenuManager : MonoBehaviour
     [SerializeField] private Button platformerOpen;
     [SerializeField] private Button SpawnButtonOpen;
     [SerializeField] private Button PongButton;
+    [SerializeField] private Button FPSButton;
 
     // Start is called before the first frame update
     void Start()
@@ -22,6 +23,7 @@ public class MainMenuManager : MonoBehaviour
         platformerOpen.onClick.AddListener(() => LoadingScreen.LoadScene("NotAnotherPlatformer"));
         SpawnButtonOpen.onClick.AddListener(() => LoadingScreen.LoadScene("3DSpawn"));
         PongButton.onClick.AddListener(() => LoadingScreen.LoadScene("Pong"));
+        FPSButton.onClick.AddListener(() => LoadingScreen.LoadScene("FPS"));
 
     }
 
