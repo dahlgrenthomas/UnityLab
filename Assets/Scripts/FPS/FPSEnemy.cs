@@ -23,6 +23,7 @@ public class FPSEnemy : MonoBehaviour
         Vector3 directionToPlayer = (playerPos - mainTransform.position).normalized;
         mainTransform.position += (directionToPlayer * moveSpeed * Time.deltaTime);
 
+
     }
     private void OnTriggerEnter(Collider other)
     {

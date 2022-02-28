@@ -39,6 +39,7 @@ public class FPSPlayer : MonoBehaviour
     {
         if (hit.gameObject.CompareTag("Enemy") && (Time.time - lastHitTime > 1f))
         {
+            Debug.Log("Hit palet");
             lastHitTime = Time.time;
             Destroy(hit.gameObject);
             if (Health > 0)
