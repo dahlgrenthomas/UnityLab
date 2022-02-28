@@ -60,7 +60,7 @@ public class FPSPlayer : MonoBehaviour
             health = value;
             fpsUI.ShowHealthFraction((float)Health / (float)maxHealth);
             if (health <= 0)
-            {
+            {     
                 LoadingScreen.LoadScene("MainMenu");
             }
         }

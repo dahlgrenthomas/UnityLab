@@ -17,6 +17,8 @@ public class MainMenuManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
         creditsOpen.onClick.AddListener(() => { creditsUI.SetActive(true); });
         creditsClose.onClick.AddListener(() => { creditsUI.SetActive(false); });
         startButton.onClick.AddListener(() => LoadingScreen.LoadScene("GunScene"));
