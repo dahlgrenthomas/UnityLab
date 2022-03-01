@@ -7,13 +7,17 @@ public class FPSPlayer : MonoBehaviour
     [SerializeField] private Transform shootPosition;
     [SerializeField] private Transform head;
     [SerializeField] private GameObject[] bullets;
-    [SerializeField] private AudioSource shootSound;
+    [SerializeField] private AudioClip shootSound;
     [SerializeField] private FPSUI fpsUI;
     [SerializeField] private int maxHealth;
+    private AudioSource[] audioClips;
+    public AudioSource gunShot;
     // Start is called before the first frame update
     void Start()
     {
-        
+        audioClips = GetComponents<AudioSource>();
+        gunShot = audioClips[1];
+
     }
     public static FPSPlayer instance;
 
@@ -30,7 +34,7 @@ public class FPSPlayer : MonoBehaviour
             GameObject bulletPrefab = bullets[Random.Range(0, bullets.Length)];
             GameObject newBullet = Instantiate(bulletPrefab);
             newBullet.transform.SetPositionAndRotation(shootPosition.position, shootPosition.rotation);
-            shootSound.Play();
+            gunShot.Play();
         }
 
     }
