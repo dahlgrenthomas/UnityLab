@@ -17,7 +17,11 @@ public class FPSSpawner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        secondsPerSpawn -= (0.05f * Time.deltaTime);
+        if(secondsPerSpawn > .5f)
+        {
+            secondsPerSpawn -= (0.05f * Time.deltaTime);
+        }
+        
         if (Time.time - lastSpawnTime >= secondsPerSpawn && FPSPlayer.instance.ShouldSpawn(spawnLocation.position))
         {
             lastSpawnTime = Time.time;
