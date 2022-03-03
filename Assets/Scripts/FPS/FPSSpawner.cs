@@ -17,7 +17,7 @@ public class FPSSpawner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(secondsPerSpawn > .5f)
+        if(secondsPerSpawn >= .1f)
         {
             secondsPerSpawn -= (0.05f * Time.deltaTime);
         }
